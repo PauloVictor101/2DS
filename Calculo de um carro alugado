@@ -12,4 +12,4 @@ print (f"você ira pagar {preço_a_pagar_por_km} pelos km rodados")
 
 preço_total = preço_a_pagar_pelos_dias + preço_a_pagar_por_km
 
-print(f"o preço total a pagar é {preço_total}")
+print(f"o preço total a pagar é: R$ {preço_total:.2f}")
