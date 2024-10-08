@@ -1,0 +1,32 @@
+assentos = [[0 for _ in range (8)] for _ in range(5)]
+
+def reserva_assento(assentos, fileira, assento):
+    if 0 <= fileira < len(assentos) and 0 <= assento < len(assentos[0]):
+        if assentos[fileira][assento] == 0:
+            assentos[fileira][assento] = 1
+            print(f"assento ({fileira + 1}, {assento + 1}) reservado com sucesso.")
+        else:
+            print(f"assento ({fileira + 1}, {assento + 1}) já esta reservado.")
+    else:
+        print("assento invalido")
+
+def cancelar_reserva(assentos, fileira, assunto):
+    if 0 <= fileira < len(assentos) and 0 <= assentos < len(assentos[0]):
+        if assentos[fileira][assento] == 1:
+            assentos[fileira][assento] = 0
+            print(f"Reserva do assento({fileira + 1}, {assento + 1}) cancelada com sucesso.")
+        else:
+            print(f"Assento ({fileira + 1}, {assento + 1}) não está resevado.")
+    else:
+        print("Assento inválido.")
+    
+def exibir_mapa_assentos(assentos):
+    print("Mapa de Assentos:")
+    for i, fileira in enumerate(assentos):
+        print(f"Fileira {i + 1}: " + " ".join(str(assento) for assento in fileira))
+        
+reservar_assento(assentos, 0, 2)
+reservar_assento(assentos, 1, 4)
+reservar_assento(assentos, 3, 6)
+
+cancelar_reserva(assentos, 1, 4)
